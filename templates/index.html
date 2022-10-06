@@ -11,9 +11,9 @@
 <body>
     <main class="container-sm">
         <div class="row d-flex justify-content-center align-items-center mt-5">
-            <div class="w-50 bg-dark rounded p-5">
+            <div class="w-50 bg-dark rounded p-5 text-white">
                 <h1 class="text-warning">Dojo Survey</h1>
-                <form action="/process" method="POST" class="text-white">
+                <form action="/process" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" required>
@@ -39,11 +39,35 @@
                         </select>
                         <div id="languageHelp" class="form-text">Selecciona tu lenguaje de programación favorito.</div>
                     </div>
+                    
+                    <div class="mb-3">
+                        <p class="form-label">Genero</p>
+
+                        <div class="btn-group" role="group" aria-label="Genero" aria-describedby="generoHelp">
+                            <input type="radio" class="btn-check" name="genero" id="btnradio1" value="Masculino" autocomplete="off" checked>
+                            <label class="btn btn-outline-warning" for="btnradio1">Masculino</label>
+                        
+                            <input type="radio" class="btn-check" name="genero" id="btnradio2" value="Femenino" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="btnradio2">Femenino</label>
+                    
+                            <input type="radio" class="btn-check" name="genero" id="btnradio3" value="No especifico" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="btnradio3">No especificar</label>
+                        </div>
+                        <div id="generoHelp" class="form-text">Selecciona tu genero.</div>
+                    </div>
                     <div class="mb-3">
                         <label for="comment" class="form-label">Comentario (opcional)</label>
                         <textarea name="comment" class="form-control" id="comment" aria-describedby="commentHelp"></textarea>
                         <div id="commentHelp" class="form-text">Escribe un comentario.</div>
                     </div>               
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="acepta" id="aceptaTerminos" name="acepta">
+                        <label class="form-check-label" for="aceptaTerminos">
+                            Acepta nuestros terminos
+                        </label>
+                    </div>
+
                     <button type="submit" class="btn btn-warning">Enviar</button>
                 </form>
             </div>

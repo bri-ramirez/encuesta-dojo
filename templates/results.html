@@ -14,9 +14,11 @@
             <div class="w-50 bg-dark rounded p-5 text-white">
                 <h1 class="text-warning mb-5">Dojo Survey</h1>
                 <p>Nombre: {{ session["encuesta"]["name"] }} </p>
+                <p>Genero: {{ session["encuesta"]["genero"] }} </p>
                 <p>Locación Dojo: {{ session["encuesta"]["location"] }} </p>
                 <p>Lenguaje Favorito: {{ session["encuesta"]["language"] }} </p>
                 <p>Comentario: {{ session["encuesta"]["comment"] }} </p>
+                <p>Terminos: {{ session["encuesta"]["acepta"] }} </p>
                 <p><a href="{{ url_for('encuesta') }}" class="link-primary">Home</a></p>
             </div>
         </div>
