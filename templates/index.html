@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <main class="container-sm">
+        <div class="row d-flex justify-content-center align-items-center mt-5">
+            <div class="w-50 bg-dark rounded p-5">
+                <h1 class="text-warning">Dojo Survey</h1>
+                <form action="/process" method="POST" class="text-white">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" required>
+                        <div id="nameHelp" class="form-text">Pon tu nombre completo.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Dojo Location</label>
+                        <select id="location" name="location" class="form-select" aria-describedby="locationHelp" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="chile">Chile</option>
+                            <option value="argentina">Argentina</option>
+                        </select>
+                        <div id="locationHelp" class="form-text">Selecciona la locación del Dojo.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="favorite_language" class="form-label">Favorite Language</label>
+                        <select id="favorite_language" name="language" class="form-select" aria-describedby="languageHelp" required>
+                            <option value="">-- Seleccione --</option>
+                            <option value="Python">Python</option>
+                            <option value="Javascript">javascript</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Go">Go</option>
+                        </select>
+                        <div id="languageHelp" class="form-text">Selecciona tu lenguaje de programación favorito.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comment" class="form-label">Comentario (opcional)</label>
+                        <textarea name="comment" class="form-control" id="comment" aria-describedby="commentHelp"></textarea>
+                        <div id="commentHelp" class="form-text">Escribe un comentario.</div>
+                    </div>               
+                    <button type="submit" class="btn btn-warning">Enviar</button>
+                </form>
+            </div>
+        </div>  
+    </main>
+</body>
+</html>
